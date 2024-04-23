@@ -51,7 +51,7 @@ pipeline {
                 sh 'docker network create dev01 || echo "this network exists"'
                 sh 'echo y | docker container prune '
 
-                sh "docker container run -d --rm --name khalid-springboot -p 8081:8080 --network dev01 hoangduyhd/springboot"
+                sh "docker container run -d --name khalid-springboot -p 8081:8080 --network dev01 hoangduyhd/springboot"
             }
         }
  
