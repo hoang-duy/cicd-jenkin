@@ -48,7 +48,7 @@ pipeline {
                 echo 'Deploying and cleaning'
                 sh 'docker image pull hoangduyhd/springboot'
                 sh 'docker container stop springboot || echo "this container does not exist" '
-                sh 'docker network create dev01 || echo "this network exists already"'
+                sh 'docker network create dev01 || echo "this network exists"'
                 sh 'echo y | docker container prune '
                 sh "docker container run --rm --name springboot -p 8081:8080 --network dev01 hoangduyhd/springboot "
             }
