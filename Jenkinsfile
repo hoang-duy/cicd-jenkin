@@ -33,7 +33,7 @@ pipeline {
                 echo 'Deploying and cleaning'
                 sh 'docker image pull mysql:8.0'
                 sh 'docker network create dev01 || echo "this network exists"'
-                sh 'docker container stop khalid-mysql || echo "this container does not exis" '
+                sh 'docker container stop khalid-mysql || echo "this container does not exist" '
                 sh 'echo y | docker container prune '
                 sh 'docker volume rm khalid-mysql-data || echo "no volume"'
 
